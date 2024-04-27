@@ -131,13 +131,4 @@ function mostrarCalendario() {
     }
 }
 
-function mostrarOpcion() {
-    var opcion = document.getElementById('opcion').value;
-    if (opcion === 'meta') {
-        document.getElementById('opcion-meta').style.display = 'block';
-        document.getElementById('opcion-manual').style.display = 'none';
-    } else if (opcion === 'manual') {
-        document.getElementById('opcion-meta').style.display = 'none';
-        document.getElementById('opcion-manual').style.display = 'block';
-    }
-}
+

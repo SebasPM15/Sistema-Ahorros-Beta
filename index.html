@@ -9,7 +9,6 @@
 <body>
     <div class="container">
         <h1>Calculadora de Ahorro</h1>
-        <div id="marca-agua">Mateo Codes</div>
         <div class="input-section">
             <label for="opcion">Seleccione una opción:</label>
             <select id="opcion" onchange="mostrarOpcion()">
@@ -17,13 +16,20 @@
                 <option value="manual">Ingresar valores manualmente</option>
             </select>
         </div>
-        <div id="opcion-meta" style="display: none;">
+        <div id="opcion-meta" class="hidden">
             <label for="meta-dinero">Meta de dinero a alcanzar:</label>
             <input type="number" id="meta-dinero" min="0" step="0.01">
+            <label for="meta-tiempo">Tiempo para alcanzar la meta:</label>
+            <select id="meta-tiempo" onchange="mostrarTiempo()">
+                <option value="dias">Días</option>
+                <option value="semanas">Semanas</option>
+                <option value="meses">Meses</option>
+            </select>
+            <input type="number" id="tiempo-meta" min="1" step="1">
             <button onclick="calcularAhorroMeta()">Calcular</button>
-            <div id="sugerencias-meta" style="display: none;"></div>
+            <div id="sugerencias-meta" class="hidden"></div>
         </div>
-        <div id="opcion-manual" style="display: none;">
+        <div id="opcion-manual" class="hidden">
             <label for="dinero-diario">Cantidad de dinero diario a ahorrar:</label>
             <input type="number" id="dinero-diario" min="0" step="0.01">
             <label for="dias-semana">Días a la semana para ahorrar:</label>
@@ -33,8 +39,10 @@
             <button onclick="calcularAhorroManual()">Calcular</button>
         </div>
         <div id="resultado"></div>
-        <div id="calendario"></div>
     </div>
+    <footer>
+        Creado por: Mateo Pilco (2024)
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
